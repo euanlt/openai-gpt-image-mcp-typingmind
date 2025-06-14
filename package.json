@@ -2,6 +2,7 @@
   "name": "openai-gpt-image-mcp-typingmind",
   "version": "1.0.0",
   "description": "OpenAI GPT Image MCP server for TypingMind integration",
+  "type": "module",
   "main": "dist/index.js",
   "bin": {
     "openai-gpt-image-mcp": "./dist/index.js"
@@ -20,27 +21,25 @@
     "ai"
   ],
   "devDependencies": {
-    "@types/node": "^22.15.2"
+    "@types/node": "^22.15.2",
+    "shx": "^0.4.0"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
     "openai": "^4.96.0",
-    "zod": "^3.25.64",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "zod": "^3.25.64"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
     "start": "node dist/index.js",
-    "postinstall": "npm run build",
-    "prepublishOnly": "npm run build"
+    "watch": "tsc --watch"
   },
   "engines": {
     "node": ">=14.0.0"
   },
   "files": [
-    "src/**/*",
-    "tsconfig.json",
-    "README.md",
-    "LICENSE"
+    "dist"
   ]
 }
