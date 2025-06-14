@@ -1,17 +1,44 @@
 {
-  "name": "openai-gpt-image-mcp",
+  "name": "openai-gpt-image-mcp-typingmind",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "OpenAI GPT Image MCP server for TypingMind integration",
+  "main": "dist/index.js",
+  "bin": {
+    "openai-gpt-image-mcp": "./dist/index.js"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/euanlt/openai-image-mcp-typingmind.git"
+  },
+  "keywords": [
+    "mcp",
+    "openai",
+    "image",
+    "generation",
+    "typingmind",
+    "ai"
+  ],
   "devDependencies": {
     "@types/node": "^22.15.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
-    "openai": "^4.96.0"
+    "openai": "^4.96.0",
+    "zod": "^3.25.64"
   },
   "scripts": {
-    "build": "tsc"
-  }
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ]
 }

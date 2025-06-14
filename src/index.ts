@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // Suppress all Node.js warnings (including deprecation)
 (process as any).emitWarning = () => { };
 
@@ -382,4 +384,4 @@ if (envFileArgIndex !== -1 && cmdArgs[envFileArgIndex + 1]) {
 
   const transport = new StdioServerTransport();
   await server.connect(transport);
-})(); 
+})();
