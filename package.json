@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "OpenAI GPT Image MCP server for TypingMind integration",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "test-server.js",
   "bin": {
-    "openai-gpt-image-mcp": "./dist/index.js"
+    "openai-gpt-image-mcp": "./test-server.js"
   },
   "license": "MIT",
   "repository": {
@@ -40,6 +40,6 @@
     "node": ">=14.0.0"
   },
   "files": [
-    "dist"
+    "test-server.js"
   ]
 }
